@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="start-container">
+        <h1>Welcome to the Quiz</h1>
+        <input type="range" id="question-count" min="1" max="231" value="10">
+        <span id="question-count-value">10</span>
+        <button id="start-btn" class="btn">Start</button>
+    </div>
+    <div id="quiz-container" class="hide">
+        <div id="timer">Time: 0:00</div>
+        <div id="questions-left"></div>
+        <div id="question-container"></div>
+        <div id="answer-buttons" class="btn-container"></div>
+        <button id="next-btn" class="btn hide">Next</button>
+        <button id="repeat-btn" class="btn hide">Repeat the questions you got wrong, womp womp!</button>
+    </div>
+    <div id="comments-section" class="hide">
+        <h2>Comments</h2>
+        <div id="comments"></div>
+        <input type="text" id="comment-name" placeholder="Your name">
+        <input type="text" id="comment-text" placeholder="Your comment">
+        <button id="submit-comment" class="btn">Submit</button>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyByiPxHqzo_mtULQrKiLzvzRUJ5m3bhPXM",
+            authDomain: "bankv2-71e7d.firebaseapp.com",
+            databaseURL: "https://bankv2-71e7d-default-rtdb.firebaseio.com",
+            projectId: "bankv2-71e7d",
+            storageBucket: "bankv2-71e7d.appspot.com",
+            messagingSenderId: "724662638213",
+            appId: "1:724662638213:web:6b5ff904f0258c9edf3bec"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+    </script>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
